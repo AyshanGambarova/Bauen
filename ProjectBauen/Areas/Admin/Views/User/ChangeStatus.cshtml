@@ -1,0 +1,27 @@
+﻿@model AppUser
+<div class="row">
+    <div class="col-md-8">
+        <h4>Full name:<b>@Model.FullName</b></h4>
+        <h4>Username:<b>@Model.UserName</b></h4>
+        <h4>Email:<b>@Model.FullName</b></h4>
+      
+        @if (Model.IsActive)
+        {
+            <h2 class="text-danger">İstifadəçini dezaktiv etmək istədiyinizə əminsinizmi?</h2>
+        }
+        else
+        {
+            <h2 class="text-success">İstifadəçini aktiv etmək istədiyinizə əminsinizmi?</h2>
+        }
+        @if (Model.IsActive)
+        {
+            <a asp-action="ChangeStatusConfirmed" asp-route-id="@Model.Id" class="btn btn-danger">Dezaktivasiya</a>
+        }
+        else
+        {
+            <a asp-action="ChangeStatusConfirmed" asp-route-id="@Model.Id" class="btn btn-success">Aktivasiya</a>
+        }
+        <a asp-action="Index" class="btn btn-primary">Əvvəlki səhifə</a>
+    </div>
+    </div>
+

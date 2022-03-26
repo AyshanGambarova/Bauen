@@ -1,0 +1,53 @@
+﻿@model About
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Add Testimonial</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Current image:
+                        <img src="~/img/@Model.Image" style="width:200px" class="rounded d-block mb-3" />
+                    </p>
+                </div>
+               
+                <div class="col-12 mb-4">
+                    <label asp-for="Title"></label>
+                    <input type="text" asp-for="Title" class="form-control" placeholder="Title" required="">
+                    <span asp-validation-for="Title"></span>
+                </div>
+                <div class="col-12 mb-4">
+                    <label asp-for="Subtitle"></label>
+                    <input type="text" asp-for="Subtitle" class="form-control" placeholder="Title" required="">
+                    <span asp-validation-for="Subtitle"></span>
+                </div>
+                <div class="col-12 mb-4">
+                    <label asp-for="Text"></label>
+                    <textarea class="form-control" asp-for="Text" name="Text" id="" cols="10" rows="10" required=""></textarea>
+                    <span asp-validation-for="Text"></span>
+                </div>
+                <div class="col-12 mb-4">
+                    <input type="hidden" asp-for="Image" />
+                    <label asp-for="ImageFile"></label>
+                    <div class="custom-file">
+                        <input accept="image/*" class="custom-file-input" asp-for="ImageFile">
+                        <label class="custom-file-label">
+                            Choose
+                            file...
+                        </label>
+                        <span class="text-danger small" asp-validation-for="ImageFile"></span>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button asp-action="Index" class="btn btn-primary">Əvvəlki səhifə</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

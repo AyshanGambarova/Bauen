@@ -1,0 +1,21 @@
+﻿@model About
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="text-danger">Silmək istədiyinizə əminsinizmi?</h2>
+        @if (String.IsNullOrEmpty(Model.Image))
+        {
+            <img src="~/img/default.jpg" style="width:450px" class="rounded d-block mb-3" />
+        }
+        else
+        {
+            <img src="~/img/@Model.Image" style="width:200px" class="rounded d-block mb-3" />
+        }
+        <h4>Title: <b>@Html.Raw(@Model.Title)</b></h4>
+        <h4>Subtitle: <b>@Model.Subtitle</b></h4>
+        <div class="mb-5">
+            @Html.Raw(@Model.Text)
+        </div>
+        <a asp-action="PermanentlyDelete" asp-route-id="@Model.Id" class="btn btn-danger">Sil</a>
+        <a asp-action="Index" class="btn btn-primary">Əvvəlki səhifə</a>
+    </div>
+</div>

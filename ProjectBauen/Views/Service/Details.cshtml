@@ -1,0 +1,60 @@
+﻿@model Service
+<div class="content-wrapper">
+    <!-- Lines -->
+    <section class="content-lines-wrapper">
+        <div class="content-lines-inner">
+            <div class="content-lines"></div>
+        </div>
+    </section>
+    <!-- Header Banner -->
+    <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" style="background-image:url(img/banner.jpg)">
+    </section>
+    <!-- Services Page -->
+    <section class="section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title2">@Model.Subtitle</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    @Html.Raw(Model.Text)
+                    <div class="row mb-30">
+                        @foreach (ServicesImage item in Model.ServicesImages)
+                        {
+                            <div class="col-md-12 gallery-item">
+                                <a href="~/img/services/@item.Image" title="Decor Plan" class="img-zoom">
+                                    <div class="gallery-box">
+                                        <div class="gallery-img"> <img src="~/img/services/@item.Image" class="img-fluid mx-auto d-block" alt="Decor Plan"> </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                     
+                    </div>
+                </div>
+                <div class="col-md-4 sidebar-side">
+                    <aside class="sidebar blog-sidebar">
+                        <div class="sidebar-widget services">
+                            <div class="widget-inner">
+                                <div class="sidebar-title">
+                                    <h4>All Services</h4>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Achitecture</a></li>
+                                    <li><a href="#">Interior Design</a></li>
+                                    <li><a href="#">Urban Design</a></li>
+                                    <li><a href="#">Planning</a></li>
+                                    <li><a href="#">3D Modelling</a></li>
+                                    <li><a href="#">Decor Plan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </section>
+ </div>
